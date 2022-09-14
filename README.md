@@ -4,12 +4,12 @@ Here we are building a serverless , progressive web application (PWA) with react
 
 # key Features of the app
 
-Filter events by city
-Show/hide event details
-specify number of events
-Use the app when offline
-Add an app shortcut to the homescreen
-View a chart showing the number of upcoming events by city
+_Filter events by city,
+Show/hide event details,
+specify number of events,
+Use the app when offline,
+Add an app shortcut to the homescreen,
+View a chart showing the number of upcoming events by city._
 
 # Project dependencies
 
