@@ -8,12 +8,12 @@ When first opening the app, you will be prompted to sign in with Google in order
 
 # key Features of the app
 
-Filter events by city
-Show/hide event details
-specify number of events
-Use the app when offline
-Add an app shortcut to the homescreen
-View a chart showing the number of upcoming events by city
+_Filter events by city,
+Show/hide event details,
+specify number of events,
+Use the app when offline,
+Add an app shortcut to the homescreen,
+View a chart showing the number of upcoming events by city._
 
 # Project dependencies
 
