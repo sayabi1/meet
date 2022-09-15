@@ -2,6 +2,10 @@
 
 Here we are building a serverless , progressive web application (PWA) with react using a test-driven devlopment(TDD).
 
+# How to Use This App.
+
+When first opening the app, you will be prompted to sign in with Google in order to gain access to the Google Calendar API. Then, you can specify what city and how many events to view, and click on an event to view more details!
+
 # key Features of the app
 
 Filter events by city
