@@ -7,11 +7,12 @@ export class NumberOfEvents extends Component {
     this.setState({ numOfEvents: value });
   };
 
-  state = { numOfEvents: 32 };
+  state = { numOfEvents: 16 };
   render() {
     return (
       <div className="numberOfEvents">
         <label>
+          <p>Number of Events:</p>
           <input
             type="number"
             className="number-input"
