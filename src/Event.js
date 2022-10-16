@@ -1,4 +1,4 @@
-import React, { Component, component } from "react";
+import React, { Component } from "react";
 class Event extends Component {
   toggleEventDetails = () => {
     this.setState({ show: !this.state.show });
