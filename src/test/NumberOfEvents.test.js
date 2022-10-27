@@ -12,8 +12,8 @@ describe("<NumberOfEvents /> component", () => {
     expect(NumberOfEventsWrapper.find(".number-input")).toHaveLength(1);
   });
 
-  test("render default number in the input is 32", () => {
-    expect(NumberOfEventsWrapper.find(".number-input").prop("value")).toBe(32);
+  test("render default number in the input is 16", () => {
+    expect(NumberOfEventsWrapper.find(".number-input").prop("value")).toBe(16);
   });
   test("render change the number of events in input field by changing state", () => {
     NumberOfEventsWrapper.setState({
