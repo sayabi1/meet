@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 export class NumberOfEvents extends Component {
+  state = { numOfEvents: 16 };
   handelInputChanged = (event) => {
     this.props.updateEvents(undefined, event.target.value);
     const value = event.target.value;
     this.setState({ numOfEvents: value });
   };
 
-  state = { numOfEvents: 16 };
   render() {
     return (
       <div className="numberOfEvents">
