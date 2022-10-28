@@ -15,7 +15,7 @@ class Event extends Component {
         {this.state.show && (
           <>
             <h2 className="event-about-titel">About Event</h2>
-            <p className="event-description">{event.description}</p>
+            <p className="event__Details">{event.description}</p>
             <a
               href={event.htmlLink}
               target="blank"
@@ -28,17 +28,11 @@ class Event extends Component {
           </>
         )}
         {!this.state.show ? (
-          <button
-            className="event-showDetails-btn"
-            onClick={this.toggleEventDetails}
-          >
+          <button className="details-btn" onClick={this.toggleEventDetails}>
             Show details
           </button>
         ) : (
-          <button
-            className="event-hideDetails-btn"
-            onClick={this.toggleEventDetails}
-          >
+          <button className="details-btn" onClick={this.toggleEventDetails}>
             Hide Details
           </button>
         )}
