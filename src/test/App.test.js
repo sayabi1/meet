@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
+
 import App from "../App";
 import EventList from "../EventList";
 import CitySearch from "../CitySearch";

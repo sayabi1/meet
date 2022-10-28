@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
+
 import Event from "../Event";
 import { mockData } from "../mock-data";
 
@@ -18,7 +19,7 @@ describe("<Event /> component", () => {
     expect(EventWrapper.find(".event-info")).toHaveLength(1);
   });
   test("render show details button in event item", () => {
-    expect(EventWrapper.find(".event-showDetails-btn")).toHaveLength(1);
+    expect(EventWrapper.find(".details-btn")).toHaveLength(1);
   });
   test("render event titel correctly", () => {
     expect(EventWrapper.find(".event-summary-titel").text()).toBe(
@@ -41,24 +42,24 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       show: false,
     });
-    EventWrapper.find(".event-showDetails-btn").simulate("click");
+    EventWrapper.find(".details-btn").simulate("click");
     expect(EventWrapper.state("show")).toBe(true);
   });
   test("render when event is collasped after click expand event details", () => {
     EventWrapper.setState({
       show: true,
     });
-    expect(EventWrapper.find(".event-description").text()).toContain(
+    expect(EventWrapper.find(".event__Details").text()).toContain(
       event.description
     );
-    expect(EventWrapper.find(".event-hideDetails-btn")).toHaveLength(1);
+    expect(EventWrapper.find(".details-btn")).toHaveLength(1);
   });
 
   test("render click to collapse event details", () => {
     EventWrapper.setState({
       show: true,
     });
-    EventWrapper.find(".event-hideDetails-btn").simulate("click");
+    EventWrapper.find(".details-btn").simulate("click");
     expect(EventWrapper.state("show")).toBe(false);
   });
   test("render when event is expanded after click hide event details", () => {
@@ -68,7 +69,7 @@ describe("<Event /> component", () => {
     EventWrapper.setState({
       show: false,
     });
-    expect(EventWrapper.find(".event-description")).toHaveLength(0);
+    expect(EventWrapper.find(".event__Details")).toHaveLength(0);
   });
 });
 

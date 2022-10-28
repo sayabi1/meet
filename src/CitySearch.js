@@ -6,18 +6,31 @@ class CitySearch extends Component {
     suggestions: [],
     showSuggestions: undefined,
   };
-  handelInputChanged = (event) => {
+  handleInputChanged = (event) => {
     const value = event.target.value;
+    this.setState({ showSuggestions: true });
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
-    this.setState({ query: value, suggestions });
+    if (suggestions.length === 0) {
+      this.setState({
+        query: value,
+        infotext: "Please try another city",
+      });
+    } else {
+      return this.setState({
+        query: value,
+        suggestions,
+      });
+    }
   };
 
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
+      suggestion: [],
       showSuggestions: false,
+      infoText: "",
     });
     this.props.updateEvents(suggestion);
   };
@@ -28,7 +41,7 @@ class CitySearch extends Component {
           type="text"
           className="city"
           value={this.state.query}
-          onChange={this.handelInputChanged}
+          onChange={this.handleInputChanged}
           onFocus={() => {
             this.setState({ showSuggestions: true });
           }}
