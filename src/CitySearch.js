@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import InfoAlert from "./Alert";
 
 class CitySearch extends Component {
   state = {
     query: "",
     suggestions: [],
-    showSuggestions: undefined,
+    showSuggestions: false,
+    infoText: "",
   };
+
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ showSuggestions: true });
@@ -15,12 +18,13 @@ class CitySearch extends Component {
     if (suggestions.length === 0) {
       this.setState({
         query: value,
-        infotext: "Please try another city",
+        infoText: "We cannot find the City.Please try another city",
       });
     } else {
       return this.setState({
         query: value,
         suggestions,
+        infoText: "",
       });
     }
   };
@@ -28,7 +32,7 @@ class CitySearch extends Component {
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
-      suggestion: [],
+      suggestions: [],
       showSuggestions: false,
       infoText: "",
     });
@@ -37,6 +41,7 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
+        <InfoAlert text={this.state.infoText} />
         <input
           type="text"
           className="city"
