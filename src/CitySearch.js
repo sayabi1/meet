@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InfoAlert from "./Alert";
+import { InfoAlert } from "./Alert";
 
 class CitySearch extends Component {
   state = {
@@ -39,6 +39,7 @@ class CitySearch extends Component {
     this.props.updateEvents(suggestion);
   };
   render() {
+    console.log(this.state.infoText);
     return (
       <div className="CitySearch">
         <InfoAlert text={this.state.infoText} />
