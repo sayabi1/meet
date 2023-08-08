@@ -1,4 +1,4 @@
-/*import { mockData } from "./mock-data";
+import { mockData } from "./mock-data";
 import axios from "axios";
 import NProgress from "nprogress";
 
@@ -97,8 +97,7 @@ const removeQuery = () => {
 
 //"https://r80yj03wkk.execute-api.eu-central-1.amazonaws.com/dev/api/token"
 
-*/
-import { mockData } from "./mock-data";
+/*import { mockData } from "./mock-data";
 import axios from "axios";
 import NProgress from "nprogress";
 
@@ -198,4 +197,4 @@ export const getAccessToken = async () => {
     return code && getToken(code);
   }
   return accessToken;
-};
+};*/
