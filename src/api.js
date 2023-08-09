@@ -8,7 +8,7 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-const getToken = async (code) => {
+export const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
     "https://r80yj03wkk.execute-api.eu-central-1.amazonaws.com/dev/api/token" +
@@ -74,7 +74,7 @@ export const getEvents = async () => {
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
-      localStorage.setItem("lastEvents", JSON.stringyfying(result.data));
+      localStorage.setItem("lastEvents", JSON.stringyfy(result.data));
       localStorage.setItem("locations", JSON.stringify(locations));
     }
     NProgress.done();
@@ -94,6 +94,7 @@ const removeQuery = () => {
     window.history.pushState("", "", newUrl);
   }
 };
+//export { getToken };
 
 //"https://r80yj03wkk.execute-api.eu-central-1.amazonaws.com/dev/api/token"
 
